@@ -1,0 +1,1852 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass{book}
+#Declaracion de la clase CartillasGEDES.layout
+#Autor: Julián Andrés Rincón Penagos <jarincon@uniquindio.edu.co>
+
+Format 35
+
+Input stdfloats.inc
+Input stdcounters.inc
+Input stdinsets.inc
+Input stdlists.inc
+Input stdstruct.inc
+Input stdlayouts.inc
+Input stdciteformats.inc
+
+Columns                 1
+Sides                   1
+SecNumDepth             2
+TocDepth                2
+DefaultStyle            Standard
+
+DefaultFont
+	Family                Roman
+	Series                Medium
+	Shape                 Up
+	Size                  Normal
+	Color                 None
+EndFont
+
+Counter section
+	PrettyFormat         "Section ##"
+End
+
+
+Style Standard
+	Category              MainText
+	Margin                Static
+	LatexType             Paragraph
+	LatexName             dummy
+	ParIndent             MM
+	ParSkip               0.4
+	Align                 Block
+	AlignPossible         Block, Left, Right, Center
+	LabelType             No_Label
+	
+	HTMLStyle
+		div.standard {
+			margin-bottom: 2ex;
+		}
+	EndHTMLStyle
+End
+
+Style Parte
+	Margin                First_Dynamic
+	Category              Section
+	LabelString           "Parte \thepart : "
+	LabelStringAppendix   "Appendix \thepart:  "
+	LabelType             Counter
+	LabelCounter          part
+	TocLevel              1
+	LatexType             Command
+	LatexName             part
+	NeedProtect           1
+	NextNoIndent          1
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             0.8
+	ParSep                2.8
+	LabelSep              xx
+	Align                 Block
+	OptionalArgs          1
+	CommandDepth          0
+	
+	Font
+	  Series              Bold
+	  Size                huge
+	EndFont
+	
+	LabelFont 
+    Color               black
+	Series              Bold
+	Size                huge
+	EndFont
+	
+	HTMLTag               h2
+End
+
+Style Capitulo
+	Margin                First_Dynamic
+	Category              Section
+	LabelString           "Capitulo \thechapter : "
+	LabelStringAppendix   "Appendix \thechapter:  "
+	LabelType             Counter
+	LabelCounter          chapter
+	TocLevel              1
+	LatexType             Command
+	LatexName             chapter
+	NeedProtect           1
+	NextNoIndent          1
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             0.8
+	ParSep                2.8
+	LabelSep              xx
+	Align                 Block
+	OptionalArgs          1
+	CommandDepth          0
+	
+	Font
+	  Series              Bold
+	  Size                huge
+	EndFont
+	
+	LabelFont 
+    Color               blue
+	Series              Bold
+	Size                huge
+	EndFont
+	
+	HTMLTag               h2
+End
+
+Style Capitulo*
+	CopyStyle			  Capitulo
+	Margin                Static
+	Category              Section*
+	LabelType             No_Label
+	LatexName             chapter*
+	OptionalArgs          0
+End
+
+###################################################
+# Definición del encabezadoB
+Style Seccion
+	Margin                First_Dynamic
+	Category              Section
+	LabelString           "Seccion \thesection : "
+	LabelStringAppendix   "Seccion \thesection : "
+	LabelType             Counter
+	LabelCounter          section
+	TocLevel              1
+	LatexType             Command
+	LatexName             section
+	NeedProtect           1
+	NextNoIndent          1
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             0.8
+	ParSep                2.8
+	LabelSep              xx
+	Align                 Block
+	OptionalArgs          1
+	CommandDepth          0
+	
+	Font
+	  Series              Bold
+	  Size                huge
+	EndFont
+	
+	LabelFont 
+    Color               blue
+	Series              Bold
+	Size                huge
+	EndFont
+	
+	HTMLTag               h2
+End
+
+Style Seccion*
+	CopyStyle			  Seccion
+	Margin                Static
+	Category              Section*
+	LabelType             No_Label
+	LatexName             section*
+	OptionalArgs          0
+End
+
+#####################################################
+
+###################################################
+# Definición del encabezadoC
+Style Subseccion
+	Margin                First_Dynamic
+	Category              Section
+	LabelString           "Subseccion \thesubsection : "
+	LabelStringAppendix   "Subseccion \thesubsection : "
+	LabelType             Counter
+	LabelCounter          subsection
+	TocLevel              2
+	LatexType             Command
+	LatexName             subsection
+	NeedProtect           1
+	NextNoIndent          1
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             0.8
+	ParSep                2.8
+	LabelSep              xx
+	Align                 Left
+	OptionalArgs          1
+	CommandDepth          0
+	Font
+	  Series              Bold
+	  Size                LARGE
+	EndFont
+	
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           LARGE
+	EndFont
+	
+	HTMLTag               h3
+End
+
+Style Subseccion*
+	CopyStyle			  Subseccion
+	Margin                Static
+	Category              Section*
+	LabelType             No_Label
+	LatexName             subsection*
+	OptionalArgs          0
+End
+
+# Definición del encabezadoD
+Style Subsubseccion
+	Margin                First_Dynamic
+	Category              Section
+	LabelString           "Subsubseccion \thesubsubsection : "
+	LabelStringAppendix   "Subsubseccion \thesubsection : "
+	LabelType             Counter
+	LabelCounter          subsubsection
+	TocLevel              3
+	LatexType             Command
+	LatexName             subsubsection
+	NeedProtect           1
+	NextNoIndent          1
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             0.8
+	ParSep                2.8
+	LabelSep              xx
+	Align                 Left
+	OptionalArgs          1
+	CommandDepth          0
+	
+	Font
+	  Series              Bold
+	  Size                Large
+	EndFont
+	
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Large
+	EndFont
+	
+	HTMLTag               h4
+End
+
+Style Subsubseccion*
+	CopyStyle			  Subsubseccion
+	Margin                Static
+	Category              Section*
+	LabelType             No_Label
+	LatexName             subsubsection*
+	OptionalArgs          0
+End
+#####################################################
+
+# Definición del encabezadoE
+Style Parrafo
+	Margin                First_Dynamic
+	Category              Section
+	LabelString           "Parrafo \theparagraph : "
+	LabelStringAppendix   "Parrafo \theparagraph : "
+	LabelType             Counter
+	LabelCounter          paragraph
+	TocLevel              4
+	LatexType             Command
+	LatexName             paragraph
+	NeedProtect           1
+	NextNoIndent          1
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             0.8
+	ParSep                2.8
+	LabelSep              xx
+	Align                 Left
+	OptionalArgs          1
+	CommandDepth          0
+	
+	Font
+	  Series              Bold
+	  Size                Normal
+	EndFont
+	
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Normal
+	EndFont
+	
+	HTMLTag               h5
+End
+
+Style Parrafo*
+	CopyStyle			  Parrafo
+	Margin                Static
+	Category              Section*
+	LabelType             No_Label
+	LatexName             paragraph*
+	OptionalArgs          0
+End
+
+##############################################
+
+# Definición del encabezadoF
+Style Subparrafo
+	Margin                First_Dynamic
+	Category              Section
+	LabelString           "Subparrafo \thesubparagraph : "
+	LabelStringAppendix   "Subparrafo \thesubparagraph : "
+	LabelType             Counter
+	LabelCounter          subparagraph
+	TocLevel              5
+	LatexType             Command
+	LatexName             subparagraph
+	NeedProtect           1
+	NextNoIndent          1
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             0.8
+	ParSep                2.8
+	LabelSep              xx
+	Align                 Left
+	OptionalArgs          1
+	CommandDepth          0
+	
+	Font
+	  Series              Bold
+	  Size                Large
+	EndFont
+	
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Normal
+	EndFont
+	
+	HTMLTag               h6
+End
+
+Style Subparrafo*
+	CopyStyle			  Subparrafo
+	Margin                Static
+	Category              Section*
+	LabelType             No_Label
+	LatexName             subparagraph*
+	OptionalArgs          0
+End
+
+#################################################
+#################################################
+#################################################
+
+#Definición de opciones de la cartilla
+
+Style GoogleColab
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             GoogleColab
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"URL"
+	  Tooltip	"Escriba la URL del Codigo de Google Colab"
+	EndArgument
+	LabelType             Static
+	LabelString           "GoogleColab: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+InsetLayout "Flex:Codigo"
+	LyxType			custom
+	LatexType		Environment
+	LatexName		lstlisting
+	Decoration		classic
+	LabelString		"Codigo de Programa"
+	Font
+	  Color			foreground
+	  Size			Small
+	  Family		Roman
+	  Shape			Up
+	  Series		Medium
+	  Misc			No_Emph
+	  Misc			No_Noun
+	  Misc			No_Bar
+	EndFont
+	LabelFont
+	  Color			purple
+	  Size			Small
+	EndFont
+End
+
+#Categoria A: Para Matematicas y otros
+Style Ejemplo
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             Ejemplo
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Contenido"
+	  Tooltip	"Escriba aqui el contenido del ejemplo"
+	EndArgument
+	LabelType             Static
+	LabelString           "Ejemplo: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style Aplicacion
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             Aplicacion
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Contenido"
+	  Tooltip	"Escriba aqui el contenido de la aplicación"
+	EndArgument
+	LabelType             Static
+	LabelString           "Aplicacion: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+#Categoria B: Para Matematicas y otros
+Style Ejercicio
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             Ejercicio
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Contenido"
+	  Tooltip	"Escriba aquí el contenido del ejercicio"
+	EndArgument
+	LabelType             Static
+	LabelString           "Ejercicio: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+#Categoria C: Para Matematicas y otros
+Style Solucion
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             Solucion
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	LabelType             Static
+	LabelString           "Solucion: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+#Categoria D: Para Matematicas y otros
+Style Teorema
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             Teorema
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Contenido"
+	  Tooltip	"Escriba aquí el contenido del teorema"
+	EndArgument
+	LabelType             Static
+	LabelString           "Teorema: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+#Categoria E: Para Matematicas y otros
+Style Definicion
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             Definicion
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Contenido"
+	  Tooltip	"Escriba aquí el contenido de la definición"
+	EndArgument
+	LabelType             Static
+	LabelString           "Definicion: "
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Large
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style Observacion
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             Observacion
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Contenido"
+	  Tooltip	"Escriba aquí el contenido de la observacion"
+	EndArgument
+	LabelType             Static
+	LabelString           "Observacion: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ArchivoPrograma
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             ArchivoPrograma
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Contenido"
+	  Tooltip	"Escriba la ruta del archivo de programa"
+	EndArgument
+	LabelType             Static
+	LabelString           "Archivo de Programa: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style Codigo
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Environment
+	LatexName             lstlisting
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Codigo"
+	  Tooltip	"Escriba aqui el codigo"
+	EndArgument
+	LabelType             Static
+	LabelString           "Codigo: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                Large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style Caja
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             CajaColorC
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Contenido"
+	  Tooltip	"Escriba aqui el contenido de la caja"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Ancho"
+	  Tooltip	"Escriba aqui el ancho de la caja en cm"
+	EndArgument
+	LabelType             Static
+	LabelString           "Caja: "
+	LabelFont
+	  Family              Roman
+	  Series              Bold
+	  Size                large
+	  Color               blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+
+
+
+#########################################################
+#Definicion del titulo, autores, institución ciudad y año
+
+Style Titulo
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Titulo
+  LabelString      "Titulo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style SubTitulo
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        SubTitulo
+  LabelString      "SubTitulo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style Autores
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Autores
+  LabelString      "Autor: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style Correo
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Correo
+  LabelString      "Correo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style AutoresCorto
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        AutoresCorto
+  LabelString      "Autor(Corto): "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style VinculacionDocente
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        VinculacionDocente
+  LabelString      "Vinculacion Docente: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style Logo
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Logo
+  LabelString      "Logo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+
+Style Institucion
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Institucion
+  LabelString      "Institucion: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style Grupo
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Grupo
+  LabelString      "Grupo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style Ciudad
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Ciudad
+  LabelString      "Ciudad: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style Fecha
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Fecha
+  LabelString      "Fecha: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style Materia
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        Materia
+  LabelString      "Materia: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style Editorial
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+  ParIndent        MM
+  ParSkip          1
+  TopSep           0.5
+  BottomSep        0.5
+  ParSep           1
+
+  LatexName        Editorial
+  LabelString      "Nombre de la Editorial "
+  
+  Argument 1
+	  Mandatory	1
+	  LabelString	"Editorial"
+	  Tooltip	"Escriba el nombre de la Editorial"
+  EndArgument
+  
+  Argument 2
+	  Mandatory	1
+	  LabelString	"Contacto"
+	  Tooltip	"Escriba página, correo y contacto de la editorial"
+  EndArgument
+  
+  Argument 3
+	  Mandatory	1
+	  LabelString	"ISBN"
+	  Tooltip	"Escriba o Ingrese la Imagen del ISBN"
+  EndArgument
+  
+  Argument 4
+	  Mandatory	1
+	  LabelString	"Copias"
+	  Tooltip	"Ingrese el Número de Copias"
+  EndArgument
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style NumeroArticulo
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+
+  LatexName        NumeroArticulo
+  LabelString      "Numero de Articulo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style TipoCapitulo
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+  ParIndent        MM
+  ParSkip          1
+  TopSep           0.5
+  BottomSep        0.5
+  ParSep           1
+
+  LatexName        TipoCapitulo
+  LabelString      "Tipo de Capitulo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style NombreCapitulo
+  Category         DatosLibro
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+  ParIndent        MM
+  ParSkip          1
+  TopSep           0.5
+  BottomSep        0.5
+  ParSep           1
+
+  LatexName        NombreCapitulo
+  LabelString      "Nombre de Capitulo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+Style DescripcionCapitulo
+  Category         Section
+  Margin           First_Dynamic
+  LatexType        Command
+  NextNoIndent     0
+  ParIndent        MM
+  Align            Left
+  LabelType        Static
+  LabelSep         xx
+  ParIndent        MM
+  ParSkip          1
+  TopSep           0.5
+  BottomSep        0.5
+  ParSep           1
+
+  LatexName        Descripcion
+  LabelString      "Descripcion de Capitulo: "
+
+  Font       
+	Family         Roman
+	Size		   Large
+  EndFont
+
+  LabelFont 
+    Family         Roman
+	Series         Bold
+    Color          blue
+	Size		   Large
+  EndFont
+End
+
+#generar la portada
+Style GenerarPortada
+	Category              Generar
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             GenerarPortada
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	Align                 Center
+	LabelType             Static
+	LabelString           "--- Generar la Portada ---"
+	LabelFont
+	  Family              Roman
+	  Series              Medium
+	  Size                huge
+	  Color               Blue
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style InformacionAutor
+	Category              Generar
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             InformacionAutor
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	Align                 Left
+	LabelType             Static
+	LabelString           "<Informacion-Autor>"
+	LabelFont
+	  Family              Roman
+	  Series              Normal
+	  Size                Normal
+	  Color               Red
+	EndFont
+	HTMLLabel             NONE
+End
+
+
+Style Derechos-Autor
+	Category              Generar
+	Category              Generar
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             DerechosAutor
+	ParIndent             MM
+	ParSkip               1
+	TopSep                1
+	BottomSep             1
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Autores"
+	  Tooltip	"Escriba los nombres de los autores"
+	EndArgument
+	LabelType             Static
+	LabelString           "Derechos de Autor "
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Small
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style Geometria
+	Category              Pagina
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             establecerGeometria
+	ParIndent             MM
+	ParSkip               1
+	TopSep                0.25
+	BottomSep             0.25
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Izquierda"
+	  Tooltip	"Medida del Margen Izquierdo"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Derecha"
+	  Tooltip	"Medida del Margen Derecho"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Superior"
+	  Tooltip	"Medida del Margen Superior"
+	EndArgument
+	Argument 4
+	  Mandatory	1
+	  LabelString	"Ingerior"
+	  Tooltip	"Medida del Margen Ingerior"
+	EndArgument
+	Argument 5
+	  Mandatory	1
+	  LabelString	"Margen"
+	  Tooltip	"Ancho de la nota al margen"
+	EndArgument
+	Argument 6
+	  Mandatory	1
+	  LabelString	"Seperacion"
+	  Tooltip	"Longitud de la Separación de la nota al margen"
+	EndArgument
+	LabelType             Static
+	LabelString           "Geometria de la Pagina"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           large
+	EndFont
+	HTMLLabel             NONE
+End
+
+
+Style Bibliography
+	Category              Referencias
+	TopSep                4
+	LabelString           "Bibliografia"
+	LabelFont
+	  Series              Bold
+	  Size                Huge
+	EndFont
+End
+
+Style ReferenciaLibro
+	Category              Referencias
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             ReferenciaLibro
+	ParIndent             MM
+	ParSkip               1
+	TopSep                1
+	BottomSep             1
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Autor"
+	  Tooltip	"Escriba el apellido e inicial del autor Ejemplo: Rincon, J"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Fecha"
+	  Tooltip	"Escriba la fecha de publicacion"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Titulo"
+	  Tooltip	"Escriba el titulo del libro"
+	EndArgument
+	Argument 4
+	  Mandatory	1
+	  LabelString	"Ciudad"
+	  Tooltip	"Escriba la ciudad de publicacion"
+	EndArgument
+	Argument 5
+	  Mandatory	1
+	  LabelString	"Editorial"
+	  Tooltip	"Escriba el nombre de la editorial"
+	EndArgument
+	LabelType             Static
+	LabelString           "Referencia de Libro "
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Small
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ReferenciaRevista
+	Category              Referencias
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             ReferenciaRevista
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Autor"
+	  Tooltip	"Escriba el apellido e inicial del autor Ejemplo: Rincon, J"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Fecha"
+	  Tooltip	"Escriba la fecha de publicacion. Ejemplo: 2012, septiembre 20"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Titulo del articulo"
+	  Tooltip	"Escriba el titulo del articulo"
+	EndArgument
+	Argument 4
+	  Mandatory	1
+	  LabelString	"Nombre de la Revista"
+	  Tooltip	"Escriba el nombre de la revista"
+	EndArgument
+	Argument 5
+	  Mandatory	1
+	  LabelString	"Volumen"
+	  Tooltip	"Escriba el volumen de la revista"
+	EndArgument
+	Argument 6
+	  Mandatory	1
+	  LabelString	"Paginas"
+	  Tooltip	"Escriba el numero de la pagina, ejemplo: pp 5-10"
+	EndArgument
+	LabelType             Static
+	LabelString           "Referencia de Revista "
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Small
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style TituloNotaMargen
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             tituloNotaMargen
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Texto"
+	  Tooltip	"Escriba el titulo de la nota"
+	EndArgument
+	LabelType             Static
+	LabelString           "Titulo Nota al Margen"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Small
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ReferenciaInternet
+	Category              Referencias
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             ReferenciaInternet
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Autor"
+	  Tooltip	"Escriba el apellido e inicial del autor Ejemplo: Rincon, J"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Fecha"
+	  Tooltip	"Escriba la fecha de publicacion. Ejemplo: 20 de Septiembre del 2012"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Titulo del documento de internet"
+	  Tooltip	"Escriba el titulo del articulo"
+	EndArgument
+	Argument 4
+	  Mandatory	1
+	  LabelString	"Direccion URL"
+	  Tooltip	"Escriba la direccion URL"
+	EndArgument
+	LabelType             Static
+	LabelString           "Referencia de Internet "
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Small
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style FiguraNota
+	Category              Matematicas
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             NotasFigura
+	ParIndent             MM
+	ParSkip               1
+	TopSep                2
+	BottomSep             2
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Figura"
+	  Tooltip	"Ingrese la figura"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Etiqueta"
+	  Tooltip	"Escriba el nombre de la etiqueta"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Fuente"
+	  Tooltip	"Ingrese de donde obtuvo la imagen"
+	EndArgument
+	LabelType             Static
+	LabelString           "Notas de Figura "
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           Small
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ColorOscuro
+	Category              DefinirColores
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             colOscuro
+	ParIndent             MM
+	ParSkip               1
+	TopSep                0.25
+	BottomSep             0.25
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Rojo"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Verde"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Azul"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	LabelType             Static
+	LabelString           "Color Oscuro"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           large
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ColorClaro
+	Category              DefinirColores
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             colClaro
+	ParIndent             MM
+	ParSkip               1
+	TopSep                0.25
+	BottomSep             0.25
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Rojo"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Verde"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Azul"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	LabelType             Static
+	LabelString           "Color Claro"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           large
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ColorContenido
+	Category              DefinirColores
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             colContenido
+	ParIndent             MM
+	ParSkip               1
+	TopSep                0.25
+	BottomSep             0.25
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Rojo"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Verde"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Azul"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	LabelType             Static
+	LabelString           "Color Contenido"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           large
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ColorEncabezado
+	Category              DefinirColores
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             colEncabezado
+	ParIndent             MM
+	ParSkip               1
+	TopSep                0.25
+	BottomSep             0.25
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Rojo"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Verde"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Azul"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	LabelType             Static
+	LabelString           "Color Encabezado"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           large
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ColorCajas
+	Category              DefinirColores
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             colCajas
+	ParIndent             MM
+	ParSkip               1
+	TopSep                0.25
+	BottomSep             0.25
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Rojo"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Verde"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Azul"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	LabelType             Static
+	LabelString           "Color Cajas"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           large
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ColorEjemplo
+	Category              DefinirColores
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             colEjemplos
+	ParIndent             MM
+	ParSkip               1
+	TopSep                0.25
+	BottomSep             0.25
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Rojo Encabezado"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Verde Encabezado"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Azul Encabezado"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	Argument 4
+	  Mandatory	1
+	  LabelString	"Rojo Contenido"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 5
+	  Mandatory	1
+	  LabelString	"Verde Contenido"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 6
+	  Mandatory	1
+	  LabelString	"Azul Contenido"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	LabelType             Static
+	LabelString           "Color Ejemplos"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           large
+	EndFont
+	HTMLLabel             NONE
+End
+
+Style ColorDefinicion
+	Category              DefinirColores
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Command
+	LatexName             colDefiniciones
+	ParIndent             MM
+	ParSkip               1
+	TopSep                0.25
+	BottomSep             0.25
+	ParSep                1
+	LabelSep              xx
+	Align                 Left
+	Argument 1
+	  Mandatory	1
+	  LabelString	"Rojo Encabezado"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 2
+	  Mandatory	1
+	  LabelString	"Verde Encabezado"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 3
+	  Mandatory	1
+	  LabelString	"Azul Encabezado"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	Argument 4
+	  Mandatory	1
+	  LabelString	"Rojo Contenido"
+	  Tooltip	"Divida la cantidad red en 255 y escriba el decimal"
+	EndArgument
+	Argument 5
+	  Mandatory	1
+	  LabelString	"Verde Contenido"
+	  Tooltip	"Divida la cantidad green en 255 y escriba el decimal"
+	EndArgument
+	Argument 6
+	  Mandatory	1
+	  LabelString	"Azul Contenido"
+	  Tooltip	"Divida la cantidad blue en 255 y escriba el decimal"
+	EndArgument
+	LabelType             Static
+	LabelString           "Color Definciones"
+	LabelFont 
+		Color          blue
+		Series         Bold
+		Size           large
+	EndFont
+	HTMLLabel             NONE
+End

@@ -1,0 +1,842 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ../Plantilla
+\begin_preamble
+\usepackage{Plantilla}
+\end_preamble
+\use_default_options true
+\begin_modules
+multicol
+\end_modules
+\maintain_unincluded_children no
+\language spanish
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex8
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize custom
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 30cm
+\paperheight 39cm
+\leftmargin 3cm
+\topmargin 5cm
+\rightmargin 3cm
+\bottommargin 3cm
+\columnsep 1cm
+\secnumdepth 5
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tablestyle default
+\bullet 0 2 1 -1
+\bullet 1 2 14 -1
+\bullet 2 2 16 -1
+\bullet 3 2 34 -1
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 3
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Titulo
+Título del Artículo
+\end_layout
+
+\begin_layout Autores
+Nombre del Autor
+\end_layout
+
+\begin_layout AutoresCorto
+Autor Corto
+\end_layout
+
+\begin_layout Correo
+Correo del Autor
+\end_layout
+
+\begin_layout Materia
+Métodos Numéricos
+\end_layout
+
+\begin_layout Institucion
+Universidad del Quindío
+\end_layout
+
+\begin_layout Fecha
+Mes y Año
+\end_layout
+
+\begin_layout NombreCapitulo
+Caída Libre
+\end_layout
+
+\begin_layout TipoCapitulo
+Informe
+\end_layout
+
+\begin_layout NumeroArticulo
+0
+\end_layout
+
+\begin_layout Capitulo
+Título del Informe
+\end_layout
+
+\begin_layout InformacionAutor
+
+\end_layout
+
+\begin_layout Seccion
+Resumen
+\end_layout
+
+\begin_layout Standard
+Lorem ipsum dolor sit amet,
+ consectetur adipiscing elit.
+ Donec bibendum velit vel pretium ultricies.
+ Praesent vehicula felis vitae lacus bibendum pharetra.
+ Donec non odio feugiat,
+ accumsan nunc vel,
+ interdum purus.
+ Sed semper egestas nisl in ultrices.
+ Curabitur facilisis felis vitae odio egestas,
+ eget pretium quam tempus.
+ Suspendisse enim nisi,
+ ullamcorper semper augue id,
+ volutpat facilisis mauris.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Seccion
+Explicación del Fenómeno o Modelo
+\end_layout
+
+\begin_layout Standard
+In tempus sapien massa,
+ a interdum ipsum laoreet eget.
+ Vivamus gravida enim ex,
+ porttitor ultricies augue pulvinar ut.
+ Praesent sit amet magna cursus,
+ facilisis tellus ut,
+ rhoncus nisl.
+ Vivamus et lacinia purus,
+ quis vehicula leo.
+ Nulla aliquam pulvinar odio id eleifend.
+ Interdum et malesuada fames ac ante ipsum primis in faucibus.
+ Morbi cursus ullamcorper augue in efficitur.
+ Aliquam ullamcorper orci vel erat commodo hendrerit.
+ Proin eu semper lorem.
+ Aenean leo lacus,
+ gravida vitae eleifend ac,
+ luctus nec ante.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra una gráfica de la función.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Imagenes/grafica-funciones.png
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etiqueta de la gráfica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tenemos un sistema de ecuaciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+S=\begin{cases}
+ax+by & =c\\
+dx+ey & =f
+\end{cases}\label{eq:sistema-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Seccion
+Datos
+\end_layout
+
+\begin_layout Standard
+Se hace una recopilación de los datos generados por el experimento y se explica su procedencia y la forma de tomarlos.
+\end_layout
+
+\begin_layout Standard
+Una tabla de datos del sistema 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sistema-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $11$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etiqueta de la tabla
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Seccion
+Pseudocódigo
+\end_layout
+
+\begin_layout Standard
+Explicación de los pasos necesarios para resolver el problema.
+\end_layout
+
+\begin_layout Seccion
+Código en Python
+\end_layout
+
+\begin_layout Standard
+Explicación y referencia del código en Python,
+ ya sea realizado en Google Colab,
+ Visual Studio,
+ Spider,
+ etc.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para ello existe el comando Google Colab 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "key-1"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout GoogleColab
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+https://colab.research.google.com/drive/1QSB8MEK27cfr3pHqCGi3tjCtGq-uiNyz?usp=sharing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+# Crear un *programa* en **Python** que grafique el polinomio $P_{3}
+\backslash
+left(x
+\backslash
+right)=x^{3}-10x^{2}+6x-30$ para $x
+\backslash
+in
+\backslash
+left[1,6
+\backslash
+right]$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Importar las librerias necesarias
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Definir el polinomio
+\end_layout
+
+\begin_layout Plain Layout
+
+def poly(x):
+\end_layout
+
+\begin_layout Plain Layout
+
+    return x**3 - 10*x**2 + 31*x - 30
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Crear el dominio de graficación
+\end_layout
+
+\begin_layout Plain Layout
+
+x = np.linspace(1,
+ 6,
+ 100)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Evaluar el polinomio en x
+\end_layout
+
+\begin_layout Plain Layout
+
+y = poly(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Graficar y configurar la gráfica
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.plot(x,
+ y)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.xlabel('$x$')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.ylabel('$P_n(x)$')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.title('Gráfico del Polinomio $P_n(x)$')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.grid(linestyle='--')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.show()
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Seccion
+Simulaciones
+\end_layout
+
+\begin_layout Standard
+Se muestran imágenes de las gráficas de las simulaciones y los respectivos resultados.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Imagenes/grafica-funciones.png
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etiqueta de la gráfica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Seccion
+Análisis del Método
+\end_layout
+
+\begin_layout Standard
+Se debe mostrar el análisis de:
+\end_layout
+
+\begin_layout Enumerate
+Convergencia
+\end_layout
+
+\begin_layout Enumerate
+Velocidad de Convergencia
+\end_layout
+
+\begin_layout Enumerate
+Error
+\end_layout
+
+\begin_layout Enumerate
+Método (Cuál es el método más apropiado para resolver el problema)
+\end_layout
+
+\begin_layout Seccion
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+Se generan las conclusiones al problema.
+\end_layout
+
+\begin_layout Enumerate
+Conclusión 1
+\end_layout
+
+\begin_layout Enumerate
+Conclusión 2
+\end_layout
+
+\begin_layout Enumerate
+Conclusión 3
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Rincón, J(2012)"
+key "key-1"
+literal "false"
+
+\end_inset
+
+ Rincón,
+ J.
+ (2012).
+ 
+\emph on
+Gráfica de funciones polares
+\emph default
+.
+ Editorial Elizcom
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Rincón,
+ J.
+ (2012).
+ 
+\emph on
+Gráfica de funciones polares
+\emph default
+.
+ Editorial Elizcom
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+Rincón,
+ J.
+ (2012).
+ 
+\emph on
+Gráfica de funciones polares
+\emph default
+.
+ Editorial Elizcom
+\end_layout
+
+\end_body
+\end_document
