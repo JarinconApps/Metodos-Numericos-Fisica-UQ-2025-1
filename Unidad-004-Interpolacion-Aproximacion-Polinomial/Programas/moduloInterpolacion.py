@@ -191,3 +191,134 @@ def Neville(nodos, console=False):
     expMath = 'P_'+str(n) + '(x) = '+ sympy.latex(Neville_[-1][-1])
     
     return Neville_, expMath 
+
+
+# Definir el método de las diferencias divididas
+def DiferenciasDivididas(nodos, console=False):
+
+    """
+    #### ***Función:*** DiferenciasDivididas
+    - **Descripción:** Esta función calcula un polinomio de grado $n$ dados un conjunto de nodos
+    - **Parámetros:**
+        - *nodos:* Es una dupla de la forma (x[...], y[...])
+        - *console:* Valor de tipo booleano para mostrar mensajes por consola
+    - **Valor de Retorno:** Devuelve un diccionario con todos los polinomios $P_0,\ldots,P_n$
+    """
+    
+    # Obtener los nodos de X e Y
+    x, y = nodos
+    
+    # Definir un diccionario para los polinomios y crear el primer polinomio
+    Poly = {"P0": [y[0]]}
+    
+    # Crear un ciclo para recorrer todos los nodos
+    cantNodos = len(x)
+    for n in range(1, cantNodos):
+        
+        # Obtener el polinomio anterior
+        if console:
+            print("Iteración ",n," ----------------------------------------------------------------")
+        P_ = Poly["P"+str(n-1)]
+        x_n = np.array([x[n]])
+
+        if console:
+            print("P"+str(n), P_)
+            print("x_n: ", x_n)
+        
+        # Evaluar el polinomio P_{n-1} en x_n
+        y_0 = evalPoly(P_, x_n)
+        
+        # Calcular la productoria
+        Prod = 1
+        raices = np.array([])
+        for k in range(n):
+            Prod = Prod * (x[n] - x[k])
+            raices = np.append(raices, x[k])
+
+        # Definir el polinomio n-1
+        ms_ = np.insert(P_, 0, 0)
+        a_n = (y[n] - y_0) / Prod
+        ms = a_n * MultiplicacionSintetica(raices)
+        
+        if console:
+            print("a_n: ", a_n)
+
+        # Sumar los dos polinomios
+        P_n = ms_ + ms
+        
+        if console:
+            print("P_n: ", P_n)
+        
+        # Agregar el polinomio encontrado al diccionario
+        Poly["P"+str(n)] = P_n
+    
+    # Devolver el polinomio
+    return Poly
+
+# Definir el método de las diferencias divididas
+def NodosEquiespaciados(nodos, x_0, h, console=False):
+
+    """
+    #### ***Función:*** NodosEquiespaciados
+    - **Descripción:** Esta función calcula un polinomio de grado $n$ dados un conjunto de nodos
+    - **Parámetros:**
+        - *nodos:* Es una dupla de la forma (x[...], y[...])
+        - *x_0:* Valor inicial en x
+        - *h:* Espacio o distancia entre los nodos x_i y x_{i-1}
+        - *console:* Valor de tipo booleano para mostrar mensajes por consola
+    - **Valor de Retorno:** Devuelve un diccionario con todos los polinomios $P_0,\ldots,P_n$
+    """
+    
+    # Obtener los nodos  Y
+    y = nodos
+    
+    # Definir un diccionario para los polinomios y crear el primer polinomio
+    Poly = {"P0": [y[0]]}
+    
+    # Crear un ciclo para recorrer todos los nodos
+    cantNodos = len(y)
+    for n in range(1, cantNodos):
+        
+        # Obtener el polinomio anterior
+        if console:
+            print("Iteración ",n," ----------------------------------------------------------------")
+        P_ = Poly["P"+str(n-1)]
+        x_n = np.array([x_0 + n*h])
+
+        if console:
+            print("P"+str(n-1), P_)
+            print("x_n: ", x_n)
+        
+        # Evaluar el polinomio P_{n-1} en x_n
+        y_0 = evalPoly(P_, x_n)
+        
+        # Calcular la productoria
+        Factorial = 1
+        raices = np.array([])
+        for k in range(n):
+            Factorial = Factorial * (k+1)
+            raices = np.append(raices, x_0 + k*h)
+            
+        if console:
+            print("Raíces: ", raices)
+            print("Factorial: ",Factorial)
+
+        # Definir el polinomio n-1
+        ms_ = np.insert(P_, 0, 0)
+        a_n = (y[n] - y_0) / (Factorial * h**(k+1))
+        ms = a_n * MultiplicacionSintetica(raices)
+        
+        if console:
+            print("a_n: ", a_n)
+
+        # Sumar los dos polinomios
+        P_n = ms_ + ms
+        
+        if console:
+            print("P_n: ", P_n)
+        
+        # Agregar el polinomio encontrado al diccionario
+        Poly["P"+str(n)] = P_n
+    
+    # Devolver el polinomio
+    return Poly
