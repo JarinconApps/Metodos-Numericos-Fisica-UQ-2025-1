@@ -63,6 +63,27 @@ def polyLagrange(nodos, k):
     # Usar la función de Multiplicación Sintética para calcular el polinomio
     return MultiplicacionSintetica(nodos_) / denominador
 
+# Definir la función que calcula el polinomio de Lagrange al cuadrado
+def polyLagrangeCuadrado(nodos, k):
+    
+    # Crear un vector de nodos excepto el k
+    headNodos = nodos[:k]
+    tailNodos = nodos[k+1:]
+    nodos_ = np.concatenate((headNodos, tailNodos))
+    nodos_ = np.concatenate((nodos_, nodos_))
+    
+    # Calcular la cantidad de nodos
+    n = len(nodos_)
+    
+    # Calcular el denominador
+    k_ = nodos[k]
+    denominador = 1
+    for i in range(n):
+        denominador = denominador * (k_ - nodos_[i])            
+    
+    # Usar la función de Multiplicación Sintética para calcular el polinomio
+    return MultiplicacionSintetica(nodos_) / denominador
+
 # Definir la funcion
 def polyInterpoLagrange(nodos):
     
@@ -144,6 +165,22 @@ def evalPoly(coeficientes, dominio, console=False):
 
     # Devolver la imagen
     return imagen
+
+# Definir la derivada de un polinomio
+def DerivadaPolinomio(coeficientes, console= False):
+    
+    # Determinar el grado del polinomio
+    grado = len(coeficientes) - 1
+    
+    #Polinomio Derivado
+    polyDer = []
+    
+    # Crear un ciclo para derivar el polinomio
+    for i,c in enumerate(coeficientes):
+        polyDer.append(c*(grado - i))
+        
+    # Devolver el polinomio derivado
+    return np.array(polyDer[:-1])
 
 # Definir el método de Neville
 def Neville(nodos, console=False):
@@ -322,3 +359,79 @@ def NodosEquiespaciados(nodos, x_0, h, console=False):
     
     # Devolver el polinomio
     return Poly
+
+# Definir el método de interpolación de Hermite
+def Hermite(nodos, console=False):
+    
+    """
+    #### ***Función:*** Hermite
+    - **Descripción:** Permite calcular el polinomio interpolador de un conjunto de nodos (x[...], y[...], y'[...]) a través del método de los polinomios de Hermite
+    - **Parámetros:** 
+        - *nodos:* Tupla de los nodos que se quieren interpolar (x[...], y[...], y'[...]) 
+        - *console:* Valor boolean que permite mostrar el proceso de cálculo si esta en True
+    - **Valor de Retorno:** Un vector con los coeficientes del polinomio interpolador
+    """
+    
+    # Obtener los nodos x,y y dy
+    nodos_x, nodos_y, nodos_dy = nodos
+    
+    # Calcular la cantidad de nodos a trabajar y el grado del polinomio base
+    cantNodos = len(nodos_x)
+    grado = cantNodos - 1
+    
+    # Definir el resultado del polinomio interpolador 2*grado + 1
+    PolyInterp = np.array([0*i for i in range(2*grado + 2)])
+    
+    # Crear un ciclo para calcular cada uno de los polinomios de Lagrange, H y \hat(H)
+    for k in range(cantNodos):
+        
+        # Calcular el polinomio de lagrange en k
+        if console:
+            print("")
+            print("--- Para el nodo k =",k,"--------------------------------------------")
+        
+        L = polyLagrange(nodos_x, k)
+        L2 = polyLagrangeCuadrado(nodos_x, k)  
+        
+        if console:
+            print("L(x) =",L)
+            print("L2(x) =", L2)
+        
+        # Calcular la derivada del polinomio de Lagrange y su evaluación en el nodo x_k
+        LDer_K = DerivadaPolinomio(L)
+        if console:
+            print("Dx(L) =", LDer_K)
+            
+        xk = np.array([nodos_x[k]])
+        vLDer_K = evalPoly(LDer_K, xk)[0]
+        
+        if console:
+            print("x_"+str(k)+" =",nodos_x[k],"; Dx(x_k) =", vLDer_K)
+        
+        # Usar multiplicación sintética para multiplicar L^2 por [1-2(x-xk)L'(x)] y Hallar H(x)
+        r = -1/(2*vLDer_K) - nodos_x[k]
+        H = r*L2
+            
+        H = np.insert(H, 0, 0)
+        H = np.append(L2, 0) + H
+        
+        # Se debe multiplicar el resultado por -2*vLDer_K por la factorización realizada en la Multiplicación Sintética
+        H = -2*vLDer_K*H
+        
+        if console:
+            print("H: ", H)
+        
+        # Usar multiplicación sintética para multiplicar L^2 por (x-x_k) y Hallar \hat(H)(x)
+        r = -nodos_x[k]
+        H_ = r*L2
+        H_ = np.insert(H_, 0, 0)
+        H_ = np.append(L2, 0) + H_
+        
+        if console:
+            print("H_: ", H_)
+        
+        # Crear la suma del polinomio interpolador y_k*H(x) + dy_k*\hat(H)(x)
+        PolyInterp = PolyInterp + nodos_y[k]*H + nodos_dy[k]*H_
+        
+    # Devolver el resultado del polinomio interpolador
+    return PolyInterp
